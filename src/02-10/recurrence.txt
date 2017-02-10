@@ -1,0 +1,25 @@
+If
+   T'(n) = 1 + T'(n - 2)
+then
+   T'(n - 2) = 1 + T'(n - 4)
+so
+   T'(n) = 1 + (1 + T'(n - 4))
+which we continue to
+   T'(n) = k + T'(n - 2k).
+
+We know that
+   T'(0) = 0
+and
+   T'(n - n) = T'(0)
+therefore,
+   2k = n
+hence
+   T'(n) = T'(n - 2k) = T'(n - n) = (1/2)n + T'(n - n) = (1/2)n + 0 = (1/2)n
+thus
+   T' is in big-O of n (linear)
+where
+   c = 1/2, x_0 = 0.
+
+The big-O bound would not change by instead subtracting a constant k. This
+is because T'(n) is in big-O of n and subtracting by k will not change the
+power of n (which determines the class).
