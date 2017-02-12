@@ -1,0 +1,42 @@
+Given
+
+      public class Program {
+
+        public void doWork(Counter c) {
+        c.increment();
+        c = new Counter();
+        // Point A
+        c.increment();
+        c.increment();
+        }
+
+        public static void main(String[] args) {
+          Counter c = new Counter();
+          doWork(c);
+          // Point B
+          }
+      }
+
+We can create a stack-and-heap diagram of the state of memory at /* Point A
+*/
+
+            Stack                Heap
+           +++++++             +++++++
+           --main
+             c [o-]------------> Counter 
+                                 value [0]   
+            --doWork
+              c [o-]-----------> Counter <---|
+                                 value [0]   |
+                                             |
+             --increment                     |
+               this [o-]---------------------|
+             --Counter
+               this [o-]-------> Counter
+                                 value [0]
+
+
+
+2. However, when we return from doWork, all of the manipulations done to
+the Counter were done to a copy, so c's field is still at its initialized value
+of 0.
