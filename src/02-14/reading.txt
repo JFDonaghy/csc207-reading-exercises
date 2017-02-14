@@ -1,0 +1,10 @@
+1. Entering the loop:
+When we first enter the loop, we choose the initial value to be the first
+element of the array because the first element is the greatest value so far.
+
+2. At the end of iteration of the loop
+We compare an element in the array to our stored maximum value and store
+the greater value in ret.
+
+3. After execution:
+The greatest value in the array is stored in ret.
