@@ -1,0 +1,34 @@
+public class StringMethods {
+
+	 public static boolean endsWithRep(String s1, String s2, int n) {
+		    
+		    String repetition = "";
+		    String lastReps = "";
+		    
+		    for (int i = 0; i < n; i++) {
+		      repetition += s2;
+		    }
+		    
+		    if (s1.length() < repetition.length()) {
+				return false;
+			} else {
+		            int startCompare = s1.length() - repetition.length();
+		            for (int j = startCompare; j < s1.length(); j++) {
+		            lastReps += s1.charAt(j);
+		            }
+		            if (repetition.equals(lastReps)) {
+		                return true;
+		            } else {
+		                return false;
+		            }
+		    }
+				
+		  }
+
+
+	public static void main(String[] args) {
+	      System.out.println(endsWithRep("foobarbar", "bar", 2));
+	      System.out.println(endsWithRep("foobarbar", "baz", 1));
+	}
+
+}

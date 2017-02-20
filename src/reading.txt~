@@ -1,0 +1,18 @@
+Given
+
+public class Program {
+
+  public void doWork(Counter c) {
+  c.increment();
+  c = new Counter();
+  // Point A
+  c.increment();
+  c.increment();
+  }
+
+  public static void main(String[] args) {
+    Counter c = new Counter();
+    doWork(c);
+    // Point B
+    }
+}

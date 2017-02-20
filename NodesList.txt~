@@ -1,0 +1,6 @@
+public class Node {
+    public static void Node(value v, Node n) {
+        int value = v;
+        next = n;
+    }
+}

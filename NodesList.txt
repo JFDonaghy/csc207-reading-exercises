@@ -1,0 +1,12 @@
+public class Node {
+    public static void Node(value v, Node n) {
+        int value = v;
+        next = n;
+    }
+}
+
+public class LinkedList {
+    public static void LinkedList(Node n){
+        first = n;
+    }
+}
