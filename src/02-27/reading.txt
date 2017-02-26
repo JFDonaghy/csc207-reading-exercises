@@ -1,0 +1,20 @@
+Considering the code
+
+public interface I { public void foo(); }
+public class C implements I {
+public void foo() { System.out.println("C.foo"); }
+public void bar() { System.out.println("C.bar"); }
+}
+
+I i = new C();
+i.foo(); // (A)
+i.bar(); // (B)
+
+
+For line (A)
+1. The type check passes and
+2. The output is the string "C.foo".
+
+For line (B)
+1. The type check fails because I does not have a bar method so
+2. There is no output beyond an error at compilation.
