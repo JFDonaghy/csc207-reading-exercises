@@ -1,0 +1,18 @@
+To make the following code snippet hold for any type, you would need to
+change every instance of int to T such that
+
+public class Box {
+    private int value;
+    public Box(int value) { this.value = value; }
+    public int getValue() { return value; }
+    public void setValue(int value) { this.value = value; }
+}
+
+becomes
+
+public class Box {
+    private int value;
+    public Box(int value) { this.value = value; }
+    public int getValue() { return value; }
+    public void setValue(int value) { this.value = value; }
+}
